@@ -5,8 +5,13 @@
         Console.WriteLine("Hello, Welcome to Bullard's Bussin' Burritos.");
         Console.WriteLine("Please use the numbers provided when making a selection.");
 
-        // storing of variables
+        //list to store add-on choices
         List<string> allAddonChoices = new List<string>();
+
+        // list to store burrito choices
+        List<string> burritoChoices = new List<string>();
+
+        // stored local variables
         int tortillaChoice = 0;
         int proteinChoice = 0;
         int addProteinChoice = 0;
@@ -26,18 +31,20 @@
             switch (tortillaChoice)
             {
                 case 1:
-
                     Console.WriteLine("You have chosen a Flour tortilla. ");
+                    burritoChoices.Add("Flour Tortilla");
                     validChoice = true;
                     break;
 
                 case 2:
-                    Console.WriteLine("You have chosen a Corn tortilla");
+                    Console.WriteLine("You have chosen a Corn tortilla. ");
+                    burritoChoices.Add("Corn Tortilla");
                     validChoice = true;
                     break;
 
                 case 3:
                     Console.WriteLine("You have chosen a Spicy Cayenne tortilla");
+                    burritoChoices.Add("Spicy Cayenne Tortilla");
                     validChoice = true;
                     break;
 
@@ -64,6 +71,7 @@
 
                     cost += 12.99m;
                     Console.WriteLine($"You have chosen Steak. Your new total is: ${cost}");
+                    burritoChoices.Add("Steak");
                     validChoice = true;
                     break;
 
@@ -71,6 +79,7 @@
 
                     cost += 12.99m;
                     Console.WriteLine($"You have chosen Pork. Your new total is: ${cost}");
+                    burritoChoices.Add("Pork");
                     validChoice = true;
                     break;
 
@@ -78,6 +87,7 @@
 
                     cost += 9.99m;
                     Console.WriteLine($"You have chosen Chicken Your new total is: ${cost}");
+                    burritoChoices.Add("Chicken");
                     validChoice = true;
                     break;
                 
@@ -85,6 +95,7 @@
 
                     cost += 13.99m;
                     Console.WriteLine($"You have chosen Chorizo. Your new total is: ${cost}");
+                    burritoChoices.Add("Chorizo");
                     validChoice = true;
                     break;
 
@@ -128,16 +139,19 @@
             {
                 case 1:
                     Console.WriteLine($"You have chosen Spanish Rice.");
+                    burritoChoices.Add("Spanish Rice");
                     validChoice = true;
                     break;
 
                 case 2:
                     Console.WriteLine($"You have chosen Cilantro Lime Rice.");
+                    burritoChoices.Add("Cilantro Lime Rice");
                     validChoice = true;
                     break;
 
                 case 3:
                     Console.WriteLine($"You have chosen Brown Rice");
+                    burritoChoices.Add("Brown Rice");
                     validChoice = true;
                     break;
 
@@ -162,16 +176,19 @@
             {
                 case 1:
                     Console.WriteLine($"You have chosen Black Beans.");
+                    burritoChoices.Add("Black Beans");
                     validChoice = true;
                     break;
 
                 case 2:
                     Console.WriteLine($"You have chosen Pinto Beans.");
+                    burritoChoices.Add("Pinto Beans");
                     validChoice = true;
                     break;
 
                 case 3:
                     Console.WriteLine($"You have chosen Refried Beans");
+                    burritoChoices.Add("Refried Beans");
                     validChoice = true;
                     break;
 
@@ -253,10 +270,14 @@
         // resets choice to break out loop
         validChoice = false;
 
-        // outputs users order and total 
-        foreach (var addon in allAddonChoices)
+        // outputs users order and total
+        Console.WriteLine($"Your order it complete, you have chosen a {burritoChoices[0]} with {burritoChoices[1]}, {burritoChoices[2]}, and {burritoChoices[3]}.");
+        Console.Write("With the add-on choices of: ");
+
+        // loops through add-ons list to show all user choices 
+        for (int i = 0; i < allAddonChoices.Count; i++)
         {
-            Console.WriteLine($"You order it complete, you have chosen a {tortillaChoice} with {proteinChoice}, {riceChoice}, {beanChoice} and {addon}. Your total is {cost} ");
+            Console.Write($" {allAddonChoices[i]} ");
         }
     }
 }
