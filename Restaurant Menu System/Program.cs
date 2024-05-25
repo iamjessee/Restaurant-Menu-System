@@ -26,31 +26,39 @@
         {
             Console.WriteLine("\nTORTILLA CHOICE: 1. FLOUR 2. CORN 3. SPICY CAYENNE ");
             string tortillaInput = Console.ReadLine();
-            tortillaChoice = Convert.ToInt32(tortillaInput);
 
-            switch (tortillaChoice)
+            if (int.TryParse(tortillaInput, out tortillaChoice))
             {
-                case 1:
-                    Console.WriteLine("You have chosen a Flour tortilla. ");
-                    burritoChoices.Add("Flour Tortilla");
-                    validChoice = true;
-                    break;
 
-                case 2:
-                    Console.WriteLine("You have chosen a Corn tortilla. ");
-                    burritoChoices.Add("Corn Tortilla");
-                    validChoice = true;
-                    break;
+                switch (tortillaChoice)
+                {
+                    case 1:
+                        Console.WriteLine("You have chosen a Flour tortilla. ");
+                        burritoChoices.Add("Flour Tortilla");
+                        validChoice = true;
+                        break;
 
-                case 3:
-                    Console.WriteLine("You have chosen a Spicy Cayenne tortilla");
-                    burritoChoices.Add("Spicy Cayenne Tortilla");
-                    validChoice = true;
-                    break;
+                    case 2:
+                        Console.WriteLine("You have chosen a Corn tortilla. ");
+                        burritoChoices.Add("Corn Tortilla");
+                        validChoice = true;
+                        break;
 
-                default:
-                    Console.WriteLine("Please select a choice using 1, 2, or 3");
-                    continue;
+                    case 3:
+                        Console.WriteLine("You have chosen a Spicy Cayenne tortilla");
+                        burritoChoices.Add("Spicy Cayenne Tortilla");
+                        validChoice = true;
+                        break;
+
+                    default:
+                        Console.WriteLine("Please select a choice using 1, 2, or 3");
+                        continue;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error! Please enter one of the provided numbers.");
+                continue;
             }
 
         } while (!validChoice);
@@ -63,45 +71,53 @@
         {
             Console.WriteLine("\nPROTEIN CHOICE: 1. STEAK $12.99 2. PORK $12.99 3. CHICKEN $9.99 4. CHORIZO $13.99");
             string proteinInput = Console.ReadLine();
-            proteinChoice = Convert.ToInt32(proteinInput);
 
-            switch (proteinChoice)
+            if (int.TryParse(proteinInput, out proteinChoice))
             {
-                case 1:
 
-                    cost += 12.99m;
-                    Console.WriteLine($"You have chosen Steak. Your new total is: ${cost}");
-                    burritoChoices.Add("Steak");
-                    validChoice = true;
-                    break;
+                switch (proteinChoice)
+                {
+                    case 1:
 
-                case 2:
+                        cost += 12.99m;
+                        Console.WriteLine($"You have chosen Steak. Your new total is: ${cost}");
+                        burritoChoices.Add("Steak");
+                        validChoice = true;
+                        break;
 
-                    cost += 12.99m;
-                    Console.WriteLine($"You have chosen Pork. Your new total is: ${cost}");
-                    burritoChoices.Add("Pork");
-                    validChoice = true;
-                    break;
+                    case 2:
 
-                case 3:
+                        cost += 12.99m;
+                        Console.WriteLine($"You have chosen Pork. Your new total is: ${cost}");
+                        burritoChoices.Add("Pork");
+                        validChoice = true;
+                        break;
 
-                    cost += 9.99m;
-                    Console.WriteLine($"You have chosen Chicken Your new total is: ${cost}");
-                    burritoChoices.Add("Chicken");
-                    validChoice = true;
-                    break;
-                
-                case 4:
+                    case 3:
 
-                    cost += 13.99m;
-                    Console.WriteLine($"You have chosen Chorizo. Your new total is: ${cost}");
-                    burritoChoices.Add("Chorizo");
-                    validChoice = true;
-                    break;
+                        cost += 9.99m;
+                        Console.WriteLine($"You have chosen Chicken Your new total is: ${cost}");
+                        burritoChoices.Add("Chicken");
+                        validChoice = true;
+                        break;
 
-                default:
-                    Console.WriteLine("Please select a choice using 1, 2, 3 or 4");
-                    continue;
+                    case 4:
+
+                        cost += 13.99m;
+                        Console.WriteLine($"You have chosen Chorizo. Your new total is: ${cost}");
+                        burritoChoices.Add("Chorizo");
+                        validChoice = true;
+                        break;
+
+                    default:
+                        Console.WriteLine("Please select a choice using 1, 2, 3 or 4");
+                        continue;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error! Please enter one of the provided numbers.");
+                continue;
             }
 
         } while (!validChoice);
@@ -133,31 +149,39 @@
         {
             Console.WriteLine("\nRICE: 1. SPANISH RICE 2. CILANTRO LIME RICE 3. BROWN RICE");
             string riceInput = Console.ReadLine();
-            riceChoice = Convert.ToInt32(riceInput);
 
-            switch (riceChoice)
+            if (int.TryParse(riceInput, out riceChoice))
             {
-                case 1:
-                    Console.WriteLine($"You have chosen Spanish Rice.");
-                    burritoChoices.Add("Spanish Rice");
-                    validChoice = true;
-                    break;
 
-                case 2:
-                    Console.WriteLine($"You have chosen Cilantro Lime Rice.");
-                    burritoChoices.Add("Cilantro Lime Rice");
-                    validChoice = true;
-                    break;
+                switch (riceChoice)
+                {
+                    case 1:
+                        Console.WriteLine($"You have chosen Spanish Rice.");
+                        burritoChoices.Add("Spanish Rice");
+                        validChoice = true;
+                        break;
 
-                case 3:
-                    Console.WriteLine($"You have chosen Brown Rice");
-                    burritoChoices.Add("Brown Rice");
-                    validChoice = true;
-                    break;
+                    case 2:
+                        Console.WriteLine($"You have chosen Cilantro Lime Rice.");
+                        burritoChoices.Add("Cilantro Lime Rice");
+                        validChoice = true;
+                        break;
 
-                default:
-                    Console.WriteLine("Please select a choice using 1, 2, or 3");
-                    continue;
+                    case 3:
+                        Console.WriteLine($"You have chosen Brown Rice");
+                        burritoChoices.Add("Brown Rice");
+                        validChoice = true;
+                        break;
+
+                    default:
+                        Console.WriteLine("Please select a choice using 1, 2, or 3");
+                        continue;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error! Please enter one of the provided numbers.");
+                continue;
             }
 
         } while (!validChoice);
@@ -170,33 +194,40 @@
         {
             Console.WriteLine("\nBEANS: 1. BlACK BEANS 2. PINTO BEANS RICE 3. REFRIED BEANS");
             string beanInput = Console.ReadLine();
-            beanChoice = Convert.ToInt32(beanInput);
 
-            switch (beanChoice)
+            if (int.TryParse(beanInput, out beanChoice))
             {
-                case 1:
-                    Console.WriteLine($"You have chosen Black Beans.");
-                    burritoChoices.Add("Black Beans");
-                    validChoice = true;
-                    break;
 
-                case 2:
-                    Console.WriteLine($"You have chosen Pinto Beans.");
-                    burritoChoices.Add("Pinto Beans");
-                    validChoice = true;
-                    break;
+                switch (beanChoice)
+                {
+                    case 1:
+                        Console.WriteLine($"You have chosen Black Beans.");
+                        burritoChoices.Add("Black Beans");
+                        validChoice = true;
+                        break;
 
-                case 3:
-                    Console.WriteLine($"You have chosen Refried Beans");
-                    burritoChoices.Add("Refried Beans");
-                    validChoice = true;
-                    break;
+                    case 2:
+                        Console.WriteLine($"You have chosen Pinto Beans.");
+                        burritoChoices.Add("Pinto Beans");
+                        validChoice = true;
+                        break;
 
-                default:
-                    Console.WriteLine("Please select a choice using 1, 2, or 3");
-                    continue;
+                    case 3:
+                        Console.WriteLine($"You have chosen Refried Beans");
+                        burritoChoices.Add("Refried Beans");
+                        validChoice = true;
+                        break;
+
+                    default:
+                        Console.WriteLine("Please select a choice using 1, 2, or 3");
+                        continue;
+                }
             }
-
+            else
+            {
+                Console.WriteLine("Error! Please enter one of the provided numbers.");
+                continue;
+            }
         } while (!validChoice);
 
         // resets choice to break out loop
@@ -248,11 +279,11 @@
                     break;
 
                 default:
-                    Console.WriteLine("Please select a choice using 1, 2, or 3");
+                    Console.WriteLine("Please select a choice using 1, 2, 3, 4, 5, or 6b");
                     continue;
             }
  
-            Console.WriteLine("Would you like to pick another add-on?");
+            Console.WriteLine("Would you like to pick another add-on? (Y/N)");
             string userResponse = Console.ReadLine();
 
             if (userResponse.ToUpper() == "Y")
@@ -262,7 +293,7 @@
             }
             else if (userResponse.ToUpper() == "N")
             {
-                validChoice=true;
+                validChoice = true;
             }
 
         } while (!validChoice);
@@ -277,7 +308,9 @@
         // loops through add-ons list to show all user choices 
         for (int i = 0; i < allAddonChoices.Count; i++)
         {
-            Console.Write($" {allAddonChoices[i]} ");
+            Console.Write($"{allAddonChoices[i]} ");
         }
+
+        Console.Write($" your final total is ${cost}");
     }
 }
