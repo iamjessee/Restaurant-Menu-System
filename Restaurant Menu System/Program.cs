@@ -238,51 +238,59 @@
         {
             Console.WriteLine("\nADD-ONS: 1. GRILLED CORN SALSA 2. LETTUCE 3. ONIONS 4. SOUR CREAM 5. POTATOES 6. CHESSE");
             string addonInput = Console.ReadLine();
-            addonChoice = Convert.ToInt32(addonInput);
 
-            switch (addonChoice)
+            if (int.TryParse(addonInput, out addonChoice))
             {
-                case 1:
-                    Console.WriteLine($"You have chosen Grilled Corn Salsa.");
-                    allAddonChoices.Add("Corn Salsa");
-                    validChoice = true;
-                    break;
 
-                case 2:
-                    Console.WriteLine($"You have chosen Lettuce.");
-                    allAddonChoices.Add("Lettuce");
-                    validChoice = true;
-                    break;
+                switch (addonChoice)
+                {
+                    case 1:
+                        Console.WriteLine($"You have chosen Grilled Corn Salsa.");
+                        allAddonChoices.Add("Corn Salsa");
+                        validChoice = true;
+                        break;
 
-                case 3:
-                    Console.WriteLine($"You have chosen Onions");
-                    allAddonChoices.Add("Onions");
-                    validChoice = true;
-                    break;
+                    case 2:
+                        Console.WriteLine($"You have chosen Lettuce.");
+                        allAddonChoices.Add("Lettuce");
+                        validChoice = true;
+                        break;
 
-                case 4:
-                    Console.WriteLine($"You have chosen Sour Cream");
-                    allAddonChoices.Add("Sour Cream");
-                    validChoice = true;
-                    break;
+                    case 3:
+                        Console.WriteLine($"You have chosen Onions");
+                        allAddonChoices.Add("Onions");
+                        validChoice = true;
+                        break;
 
-                case 5:
-                    Console.WriteLine($"You have chosen Potatoes");
-                    allAddonChoices.Add("Potatoes");
-                    validChoice = true;
-                    break;
+                    case 4:
+                        Console.WriteLine($"You have chosen Sour Cream");
+                        allAddonChoices.Add("Sour Cream");
+                        validChoice = true;
+                        break;
 
-                case 6:
-                    Console.WriteLine($"You have chosen Cheese");
-                    allAddonChoices.Add("Cheese");
-                    validChoice = true;
-                    break;
+                    case 5:
+                        Console.WriteLine($"You have chosen Potatoes");
+                        allAddonChoices.Add("Potatoes");
+                        validChoice = true;
+                        break;
 
-                default:
-                    Console.WriteLine("Please select a choice using 1, 2, 3, 4, 5, or 6b");
-                    continue;
+                    case 6:
+                        Console.WriteLine($"You have chosen Cheese");
+                        allAddonChoices.Add("Cheese");
+                        validChoice = true;
+                        break;
+
+                    default:
+                        Console.WriteLine("Please select a choice using 1, 2, 3, 4, 5, or 6");
+                        continue;
+                }
             }
- 
+            else
+            {
+                Console.WriteLine("Error! Please enter one of the provided numbers.");
+                continue;
+            }
+
             Console.WriteLine("Would you like to pick another add-on? (Y/N)");
             string userResponse = Console.ReadLine();
 
@@ -305,12 +313,13 @@
         Console.WriteLine($"Your order it complete, you have chosen a {burritoChoices[0]} with {burritoChoices[1]}, {burritoChoices[2]}, and {burritoChoices[3]}.");
         Console.Write("With the add-on choices of: ");
 
-        // loops through add-ons list to show all user choices 
+        // loops through add-ons list to show all user choices
         for (int i = 0; i < allAddonChoices.Count; i++)
         {
             Console.Write($"{allAddonChoices[i]} ");
         }
 
-        Console.Write($" your final total is ${cost}");
+        // adds total cost of user order to output
+        Console.WriteLine($"Your final total is: ${cost}");
     }
 }
