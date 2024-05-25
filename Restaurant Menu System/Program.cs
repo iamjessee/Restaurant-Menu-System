@@ -246,39 +246,87 @@
                 {
                     case 1:
                         Console.WriteLine($"You have chosen Grilled Corn Salsa.");
-                        allAddonChoices.Add("Corn Salsa");
-                        validChoice = true;
-                        break;
+                        if (!allAddonChoices.Contains("Corn Salsa"))
+                        {
+                            allAddonChoices.Add("Corn Salsa");
+                            validChoice = true;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot add the same option twice. Please pick another option.");
+                            continue;
+                        }
 
                     case 2:
                         Console.WriteLine($"You have chosen Lettuce.");
-                        allAddonChoices.Add("Lettuce");
-                        validChoice = true;
-                        break;
+                        if (!allAddonChoices.Contains("Lettuce"))
+                        {
+                            allAddonChoices.Add("Lettuce");
+                            validChoice = true;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot add the same option twice. Please pick another option.");
+                            continue;
+                        }
 
                     case 3:
                         Console.WriteLine($"You have chosen Onions");
-                        allAddonChoices.Add("Onions");
-                        validChoice = true;
-                        break;
+                        if (!allAddonChoices.Contains("Onions"))
+                        {
+                            allAddonChoices.Add("Onions");
+                            validChoice = true;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot add the same option twice. Please pick another option.");
+                            continue;
+                        }
 
                     case 4:
                         Console.WriteLine($"You have chosen Sour Cream");
-                        allAddonChoices.Add("Sour Cream");
-                        validChoice = true;
-                        break;
+                        if (!allAddonChoices.Contains("Sour Cream"))
+                        {
+                            allAddonChoices.Add("Sour Cream");
+                            validChoice = true;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot add the same option twice. Please pick another option.");
+                            continue;
+                        }
 
                     case 5:
                         Console.WriteLine($"You have chosen Potatoes");
-                        allAddonChoices.Add("Potatoes");
-                        validChoice = true;
-                        break;
+                        if (!allAddonChoices.Contains("Potatoes"))
+                        {
+                            allAddonChoices.Add("Potatoes");
+                            validChoice = true;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot add the same option twice. Please pick another option.");
+                            continue;
+                        }
 
                     case 6:
                         Console.WriteLine($"You have chosen Cheese");
-                        allAddonChoices.Add("Cheese");
-                        validChoice = true;
-                        break;
+                        if (!allAddonChoices.Contains("Cheese"))
+                        {
+                            allAddonChoices.Add("Cheese");
+                            validChoice = true;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You cannot add the same option twice. Please pick another option.");
+                            continue;
+                        }
 
                     default:
                         Console.WriteLine("Please select a choice using 1, 2, 3, 4, 5, or 6");
