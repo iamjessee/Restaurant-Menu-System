@@ -27,6 +27,7 @@
             Console.WriteLine("\nTORTILLA CHOICE: 1. FLOUR 2. CORN 3. SPICY CAYENNE ");
             string tortillaInput = Console.ReadLine();
 
+            // verifies user input is an int and will execute the switch case if so based on user input
             if (int.TryParse(tortillaInput, out tortillaChoice))
             {
 
@@ -55,6 +56,7 @@
                         continue;
                 }
             }
+            // if user types an invalid input they are given an error and sent back to the beginning of loop
             else
             {
                 Console.WriteLine("Error! Please enter one of the provided numbers.");
@@ -72,6 +74,7 @@
             Console.WriteLine("\nPROTEIN CHOICE: 1. STEAK $12.99 2. PORK $12.99 3. CHICKEN $9.99 4. CHORIZO $13.99");
             string proteinInput = Console.ReadLine();
 
+            // verifies user input is an int and will execute the switch case if so based on user input
             if (int.TryParse(proteinInput, out proteinChoice))
             {
 
@@ -114,6 +117,7 @@
                         continue;
                 }
             }
+            // if user types an invalid input they are given an error and sent back to the beginning of loop
             else
             {
                 Console.WriteLine("Error! Please enter one of the provided numbers.");
@@ -132,6 +136,7 @@
             Console.WriteLine("\nWould you like to double your protein for $1.99 (Y/N)?");
             string userResponse = Console.ReadLine();
 
+            // prompts user for if they would like to add more add-ons or continue to next steps, also verifies user is entering Y/N
             if (userResponse.ToUpper() == "Y")
             {
                 cost += 1.99m;
@@ -142,6 +147,10 @@
             {
                validChoice = true;
             }
+            else
+            {
+                Console.WriteLine("Please enter Y/N to continue.");
+            }
         }
 
         // prompts user for their rice choice
@@ -150,6 +159,7 @@
             Console.WriteLine("\nRICE: 1. SPANISH RICE 2. CILANTRO LIME RICE 3. BROWN RICE");
             string riceInput = Console.ReadLine();
 
+            // verifies user input is an int and will execute the switch case if so based on user input
             if (int.TryParse(riceInput, out riceChoice))
             {
 
@@ -178,6 +188,7 @@
                         continue;
                 }
             }
+            // if user types an invalid input they are given an error and sent back to the beginning of loop
             else
             {
                 Console.WriteLine("Error! Please enter one of the provided numbers.");
@@ -195,6 +206,7 @@
             Console.WriteLine("\nBEANS: 1. BlACK BEANS 2. PINTO BEANS RICE 3. REFRIED BEANS");
             string beanInput = Console.ReadLine();
 
+            // verifies user input is an int and will execute the switch case if so based on user input
             if (int.TryParse(beanInput, out beanChoice))
             {
 
@@ -223,6 +235,7 @@
                         continue;
                 }
             }
+            // if user types an invalid input they are given an error and sent back to the beginning of loop
             else
             {
                 Console.WriteLine("Error! Please enter one of the provided numbers.");
@@ -239,6 +252,7 @@
             Console.WriteLine("\nADD-ONS: 1. GRILLED CORN SALSA 2. LETTUCE 3. ONIONS 4. SOUR CREAM 5. POTATOES 6. CHESSE");
             string addonInput = Console.ReadLine();
 
+            // verifies user input is an int and will execute the switch case if so based on user input
             if (int.TryParse(addonInput, out addonChoice))
             {
 
@@ -252,6 +266,7 @@
                             validChoice = true;
                             break;
                         }
+                        // verifies user input has not already been added to the list, if it has informs user they need to pick a new option
                         else
                         {
                             Console.WriteLine("You cannot add the same option twice. Please pick another option.");
@@ -266,6 +281,7 @@
                             validChoice = true;
                             break;
                         }
+                        // verifies user input has not already been added to the list, if it has informs user they need to pick a new option
                         else
                         {
                             Console.WriteLine("You cannot add the same option twice. Please pick another option.");
@@ -280,6 +296,7 @@
                             validChoice = true;
                             break;
                         }
+                        // verifies user input has not already been added to the list, if it has informs user they need to pick a new option
                         else
                         {
                             Console.WriteLine("You cannot add the same option twice. Please pick another option.");
@@ -294,6 +311,7 @@
                             validChoice = true;
                             break;
                         }
+                        // verifies user input has not already been added to the list, if it has informs user they need to pick a new option
                         else
                         {
                             Console.WriteLine("You cannot add the same option twice. Please pick another option.");
@@ -308,6 +326,7 @@
                             validChoice = true;
                             break;
                         }
+                        // verifies user input has not already been added to the list, if it has informs user they need to pick a new option
                         else
                         {
                             Console.WriteLine("You cannot add the same option twice. Please pick another option.");
@@ -322,6 +341,7 @@
                             validChoice = true;
                             break;
                         }
+                        // verifies user input has not already been added to the list, if it has informs user they need to pick a new option
                         else
                         {
                             Console.WriteLine("You cannot add the same option twice. Please pick another option.");
@@ -333,6 +353,7 @@
                         continue;
                 }
             }
+            // if user types an invalid input they are given an error and sent back to the beginning of loop
             else
             {
                 Console.WriteLine("Error! Please enter one of the provided numbers.");
@@ -342,6 +363,7 @@
             Console.WriteLine("Would you like to pick another add-on? (Y/N)");
             string userResponse = Console.ReadLine();
 
+            // prompts user for if they would like to add more add-ons or continue to next steps, also verifies user is entering Y/N
             if (userResponse.ToUpper() == "Y")
             {
                 // Reset validChoice to allow for another add-on selection
@@ -351,6 +373,10 @@
             {
                 validChoice = true;
             }
+            else
+            {
+                Console.WriteLine("Please enter Y/N to continue.");
+            }
 
         } while (!validChoice);
 
@@ -359,15 +385,8 @@
 
         // outputs users order and total
         Console.WriteLine($"Your order it complete, you have chosen a {burritoChoices[0]} with {burritoChoices[1]}, {burritoChoices[2]}, and {burritoChoices[3]}.");
-        Console.Write("With the add-on choices of: ");
-
-        // loops through add-ons list to show all user choices
-        for (int i = 0; i < allAddonChoices.Count; i++)
-        {
-            Console.Write($"{allAddonChoices[i]} ");
-        }
-
-        // adds total cost of user order to output
-        Console.WriteLine($"Your final total is: ${cost}");
+        string addons = string.Join(", ", allAddonChoices);
+        Console.Write("With the add-on choices of: " + addons);
+        Console.WriteLine($" Your final total is: ${cost}");
     }
 }
